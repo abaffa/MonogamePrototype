@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Colliders\BoxCollider.cs" />
+    <Compile Include="Controllers\GamePadController.cs" />
     <Compile Include="Primitives2D.cs" />
     <Compile Include="SceneObjects\Bullet.cs" />
     <Compile Include="Colliders\CircleCollider.cs" />

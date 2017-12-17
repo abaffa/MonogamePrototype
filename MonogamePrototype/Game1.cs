@@ -66,19 +66,20 @@ namespace MonogamePrototype
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            KeyboardController k1 = new KeyboardController();
-            player1 = new Player(graphics.GraphicsDevice, k1, 20,
+            //KeyboardController c1 = new KeyboardController();
+            GamePadController c1 = new GamePadController(PlayerIndex.One);
+            player1 = new Player(graphics.GraphicsDevice, c1, 20,
                                                            graphics.GraphicsDevice.Viewport.Height / 2, Color.Red);
 
-            KeyboardController k2 = new KeyboardController();
-            k2.up = Keys.W;
-            k2.down = Keys.S;
-            k2.right = Keys.D;
-            k2.left = Keys.A;
-            k2.fire = Keys.Space;
+            KeyboardController c2 = new KeyboardController();
+            c2.up = Keys.W;
+            c2.down = Keys.S;
+            c2.right = Keys.D;
+            c2.left = Keys.A;
+            c2.fire = Keys.Space;
             //player2 = new Player(graphics.GraphicsDevice, k2, graphics.GraphicsDevice.Viewport.Width - 60,
             //                                                            graphics.GraphicsDevice.Viewport.Height / 2, Color.Blue);
-            player2 = new CirclePlayer(graphics.GraphicsDevice, k2, graphics.GraphicsDevice.Viewport.Width - 60,
+            player2 = new CirclePlayer(graphics.GraphicsDevice, c2, graphics.GraphicsDevice.Viewport.Width - 60,
                                                                         graphics.GraphicsDevice.Viewport.Height / 2, Color.Blue);
 
             // TODO: use this.Content to load your game content here

@@ -37,7 +37,7 @@ namespace MonogamePrototype.SceneObjects
         int dot_y;
 
         private Controls controls;
-        public KeyboardController Controller { get; set; }
+        public Controller Controller { get; set; }
 
         public Color color { get; set; }
 
@@ -57,7 +57,7 @@ namespace MonogamePrototype.SceneObjects
             damageAnimCounter = damageAnim;
         }
 
-        public Player(GraphicsDevice graphicsDevice, KeyboardController controller, int x, int y, Color color)
+        public Player(GraphicsDevice graphicsDevice, Controller controller, int x, int y, Color color)
         {
             this.graphicsDevice = graphicsDevice;
 
@@ -84,15 +84,16 @@ namespace MonogamePrototype.SceneObjects
             Controller.Update(gameTime, controls);
 
             if (controls.up)
-                dir_y = 1;
+                dir_y = controls.y_axis != 0 ? controls.y_axis : 1;
+
             if (controls.down)
-                dir_y = -1;
+                dir_y = controls.y_axis != 0 ? controls.y_axis : -1;
 
             if (controls.right)
-                dir_x = 1;
+                dir_x = controls.y_axis != 0 ? controls.x_axis : 1;
 
             if (controls.left)
-                dir_x = -1;
+                dir_x = controls.y_axis != 0 ? controls.x_axis : -1;
 
             if ((controls.left || controls.right) && !controls.up && !controls.down)
                 dir_y = 0;

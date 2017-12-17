@@ -24,7 +24,7 @@ using Microsoft.Xna.Framework;
 
 namespace MonogamePrototype.Controllers
 {
-    public class KeyboardController : Controller<Keys>
+    public class KeyboardController : Controller
     {
 
         public KeyboardController()
@@ -39,12 +39,14 @@ namespace MonogamePrototype.Controllers
 
         public override void Update(GameTime gameTime, Controls controls)
         {
-            controls.up = Keyboard.GetState().IsKeyDown(up);
-            controls.down = Keyboard.GetState().IsKeyDown(down);
-            controls.right = Keyboard.GetState().IsKeyDown(right);
-            controls.left = Keyboard.GetState().IsKeyDown(left);
+            controls.up = Keyboard.GetState().IsKeyDown((Keys)up);
+            controls.down = Keyboard.GetState().IsKeyDown((Keys)down);
+            controls.right = Keyboard.GetState().IsKeyDown((Keys)right);
+            controls.left = Keyboard.GetState().IsKeyDown((Keys)left);
 
-            controls.fire = Keyboard.GetState().IsKeyDown(fire);
+            controls.fire = Keyboard.GetState().IsKeyDown((Keys)fire);
+            controls.x_axis = 0;
+            controls.y_axis = 0;
         }
     }
 }

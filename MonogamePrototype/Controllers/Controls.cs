@@ -30,6 +30,9 @@ namespace MonogamePrototype.Controllers
         public bool left { get; set; }
         public bool right { get; set; }
 
+        public double x_axis { get; set; }
+        public double y_axis { get; set; }
+
         public bool fire { get; set; }
 
         

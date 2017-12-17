@@ -23,15 +23,15 @@ using System.Threading.Tasks;
 
 namespace MonogamePrototype.Controllers
 {
-    public abstract class Controller<T>
+    public abstract class Controller
     {
 
-        public T up { get; set; }
-        public T down { get; set; }
-        public T left { get; set; }
-        public T right { get; set; }
+        public object up { get; set; }
+        public object down { get; set; }
+        public object left { get; set; }
+        public object right { get; set; }
 
-        public T fire { get; set; }
+        public object fire { get; set; }
 
         public abstract void Update(GameTime gameTime, Controls controls);
     }

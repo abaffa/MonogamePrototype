@@ -38,7 +38,7 @@ namespace MonogamePrototype.SceneObjects
         int dot_y;
 
         private Controls controls;
-        public KeyboardController Controller { get; set; }
+        public Controller Controller { get; set; }
 
         public Color color { get; set; }
 
@@ -58,7 +58,7 @@ namespace MonogamePrototype.SceneObjects
             damageAnimCounter = damageAnim;
         }
 
-        public CirclePlayer(GraphicsDevice graphicsDevice, KeyboardController controller, int x, int y, Color color)
+        public CirclePlayer(GraphicsDevice graphicsDevice, Controller controller, int x, int y, Color color)
         {
             this.graphicsDevice = graphicsDevice;
 
